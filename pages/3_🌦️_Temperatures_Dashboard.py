@@ -58,8 +58,14 @@ temps_df["AvgTemperatureCelsius"] = round((temps_df["AvgTemperatureFahrenheit"] 
 unique_cities_list = temps_df["City"].unique()
 num_unique_cities = len(unique_cities_list)
 
+unique_countries_list = temps_df["Country"].unique()
+num_unique_countries = len(unique_countries_list)
+
 print(f"There are {num_unique_cities} different cities. Here is the list:")
 print(unique_cities_list)
+
+print(f"There are {num_unique_countries} different countries. Here is the list:")
+print(unique_countries_list)
 
 # TODO: Ex 3.4: Which are the minimum and maximum dates?
 min_date = temps_df["Date"].min()  # TODO
@@ -142,7 +148,7 @@ if unique_countries_list is not None and len(selected_cities) > 0:
     # TODO: Ex 3.7: Plot the temperatures over time for the selected cities for the selected time period,
     # every city has to be its own line with a different color.
 
-fig = plt.figure(figsize=(10, 5))
+fig2 = plt.figure(figsize=(10, 5))
 
 for city in selected_cities:
     city_df = temps_df[temps_df["City"] == city] # TODO: get a dataframe with the rows of the selected city
@@ -155,13 +161,13 @@ plt.ylabel("Temperature (°C)")  #TODO
 
 plt.legend()
     
-c.pyplot(fig)
+c.pyplot(fig2)
 
 
 
     # TODO: Make a histogram of the temperature reads of a list of selected cities, for the selected time period, 
     # every city has to be its own distribution with a different color.
-fig = plt.figure(figsize=(10, 5))
+fig3 = plt.figure(figsize=(10, 5))
 
 for city in selected_cities:
     city_df = temps_df[temps_df["City"] == city]  # TODO: get a dataframe with the rows of the selected city
@@ -174,7 +180,7 @@ plt.ylabel("Frequency")   #TODO
 
 plt.legend()
 
-c.pyplot(fig)
+c.pyplot(fig3)
 
 
 
