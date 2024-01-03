@@ -58,14 +58,8 @@ temps_df["AvgTemperatureCelsius"] = round((temps_df["AvgTemperatureFahrenheit"] 
 unique_cities_list = temps_df["City"].unique()
 num_unique_cities = len(unique_cities_list)
 
-unique_countries_list = temps_df["Country"].unique()
-num_unique_countries = len(unique_countries_list)
-
 print(f"There are {num_unique_cities} different cities. Here is the list:")
 print(unique_cities_list)
-
-print(f"There are {num_unique_countries} different countries. Here is the list:")
-print(unique_countries_list)
 
 # TODO: Ex 3.4: Which are the minimum and maximum dates?
 min_date = temps_df["Date"].min()  # TODO
