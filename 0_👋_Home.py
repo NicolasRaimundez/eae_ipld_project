@@ -24,7 +24,7 @@ st.write(f"""<div style="text-align: center;"><h1 style="text-align: center;">�
 
 
 # ----- Profile image file -----
-profile_image_file_path = "profile_image.png"       # TODO: Upload your profile image to the same folder as this script and update this if it has a different name
+profile_image_file_path = "profile_image_mine.png"       # TODO: Upload your profile image to the same folder as this script and update this if it has a different name
 
 with open(profile_image_file_path, "rb") as img_file:
     img = "data:image/png;base64," + base64.b64encode(img_file.read()).decode()
@@ -55,11 +55,11 @@ st.write("""
 
 - 🛩️ prev: I have a Bachelors in Business Administration and over 4 years in Supply Chain & Logistics
 
-- ❤️ I have a passion in music and love playing as well as watching sports
+- ❤️ I have a passion in music and love playing/watching sports
 
 - 🤖 I am extremely curious about many topics, but two of my top curiosities are about fashion and music
 
-- 🏂 Sports such as, Football, Tennis, Golf and also like production of music
+- 🏂 I do sports such as: Football, Tennis, Golf and also like producing music
 
 - 📫 How to reach me: nicolasraimundez@gmail.com
 
