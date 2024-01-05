@@ -20,7 +20,7 @@ with st.sidebar:
 
 
 # ----- Top title -----
-st.write(f"""<div style="text-align: center;"><h1 style="text-align: center;">👋 Hi! My name is ????</h1></div>""", unsafe_allow_html=True)  # TODO: Add your name
+st.write(f"""<div style="text-align: center;"><h1 style="text-align: center;">👋 Hi! My name is Nicolas Raimundez!""", unsafe_allow_html=True)  # TODO: Add your name
 
 
 # ----- Profile image file -----
@@ -39,7 +39,7 @@ st.write(f"""
 
 
 # ----- Personal title or short description -----
-current_role = "Current Role and/or Studies or Description"   # TODO: Change this
+current_role = "I am currently Studying a Master's Degree and looking for a new challenge in the Data World"   # TODO: Change this
 
 st.write(f"""<div style="text-align: center;"><h4><i>{current_role}</i></h4></div>""", unsafe_allow_html=True)
 
@@ -51,19 +51,19 @@ st.subheader("About Me")
 
 # TODO: Modify and adapt the following lines to your info, you can add or remove some details if you want
 st.write("""
-- 🧑‍💻 I am a <Current Role and/or Studies> 
+# - 🧑‍💻 I am a currently a student at EAE Business School, studying in the Big Data & Analytics Master
 
-- 🛩️ prev: <Previous Experience, Background or Studies>
+# - 🛩️ prev: I have a Bachelors in Business Administration and over 4 years in Supply Chain & Logistics
 
-- ❤️ <Your Passion and/or Interests>
+# - ❤️ I have a passion in music and love playing/watching sports
 
-- 🤖 <Your Personal Projects>
+# - 🤖 I am extremely curious about many topics, but two of my top curiosities are about fashion and music
 
-- 🏂 <Your Hobbies>
+# - 🏂 I do sports such as: Football, Tennis, Golf and also like producing music
 
-- 📫 How to reach me: <Your Email>
+# - 📫 How to reach me: nicolasraimundez@gmail.com
 
-- 🏠 Barcelona
+# - 🏠 Barcelona, Catalunya
 """)
 
 # Feel free to add other points like your Linkedin, Github, Social Media, etc.
