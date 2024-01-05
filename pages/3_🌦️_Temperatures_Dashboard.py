@@ -50,38 +50,28 @@ with st.expander("Check the complete dataset:"):
 
 # TODO: Ex 3.2: Create a new column called `AvgTemperatureCelsius` that contains the temperature in Celsius degrees.
 
-temps_df["AvgTemperatureCelsius"] = round((temps_df["AvgTemperatureFahrenheit"] - 32) * 5 / 9,1)
-
+temps_df["AvgTemperatureCelsius"] = (temps_df['AvgTemperatureFahrenheit'] - 32)*5/9
 
 # ----- Extracting some basic information from the dataset -----
 
 # TODO: Ex 3.3: How many different cities are there? Provide a list of them.
-
-unique_cities_list = temps_df["City"].unique()
-num_unique_cities = len(unique_cities_list)
-
-unique_countries_list = temps_df["Country"].unique()
-num_unique_countries = len(unique_countries_list)
-
+unique_countries_list = temps_df['City'].unique()
 
 # TODO: Ex 3.4: Which are the minimum and maximum dates?
-
-min_date = temps_df["Date"].min()  # TODO
-max_date = temps_df["Date"].max()  # TODO
+min_date = temps_df['Date'].min()  
+max_date = temps_df['Date'].max()  
 
 # TODO:  Ex 3.5: What are the global minimum and maximum temperatures? Find the city and the date of each of them.
+min_temp_data= temps_df.loc[temps_df['AvgTemperatureCelsius'].idxmin()] # TODO
+max_temp_data= temps_df.loc[temps_df['AvgTemperatureCelsius'].idxmax()] # TODO
+min_temp=round(min_temp_data['AvgTemperatureCelsius'],2)
+max_temp=round(max_temp_data['AvgTemperatureCelsius'],2)
 
-min_temp_index = temps_df["AvgTemperatureCelsius"].idxmin()
-max_temp_index = temps_df["AvgTemperatureCelsius"].idxmax()
+min_temp_city = min_temp_data['City']  # TODO
+min_temp_date = min_temp_data['Date']  # TODO
 
-min_temp = temps_df.loc[min_temp_index, "AvgTemperatureCelsius"] # TODO
-max_temp = temps_df.loc[max_temp_index, "AvgTemperatureCelsius"] # TODO
-
-min_temp_city = temps_df.loc[min_temp_index, "City"] # TODO
-min_temp_date = temps_df.loc[min_temp_index, "Date"] # TODO
-
-max_temp_city = temps_df.loc[max_temp_index, "City"] # TODO
-max_temp_date = temps_df.loc[max_temp_index, "Date"] # TODO
+max_temp_city = max_temp_data['City']  # TODO
+max_temp_date = max_temp_data['Date']  # TODO
 
 # ----- Displaying the extracted information metrics -----
 
@@ -140,34 +130,32 @@ if unique_countries_list is not None and len(selected_cities) > 0:
     # TODO: Ex 3.7: Plot the temperatures over time for the selected cities for the selected time period,
     # every city has to be its own line with a different color.
 
-fig2 = plt.figure(figsize=(10, 5))
+fig2 = plt.figure(figsize=(15, 5))
 
 for city in selected_cities:
-    city_df = temps_df[temps_df["City"] == city] # TODO: get a dataframe with the rows of the selected city
-    city_df_period = city_df_period = city_df[(city_df["Date"] >= start_date) & (city_df["Date"] <= end_date)] # TODO: get a dataframe with the rows of the selected city and the selected period of time using the Date column and any of the <, >, <=, >= operators to compare with start_date and end_date
-    plt.plot(city_df_period["Date"], city_df_period["AvgTemperatureCelsius"], label=f"{city}") # TODO plot each city line and use the label parameter to set the legend name for each city
- 
-plt.title(f"Temperature in Selected Cities")  #TODO
-plt.xlabel("Date")  #TODO
-plt.ylabel("Temperature (°C)")  #TODO
+    city_df = temps_df[temps_df['City'] == city]
+    city_df_period = city_df[(city_df['Date'] > start_date) & (city_df['Date'] < end_date)]
+    plt.plot(city_df_period['Date'], city_df_period['AvgTemperatureCelsius'], label=city)
 
+plt.title('Temperature Trends for Selected Cities')
+plt.xlabel('Date')
+plt.ylabel('Avg Celsius')
 plt.legend()
-    
+
 c.pyplot(fig2)
 
     # TODO: Make a histogram of the temperature reads of a list of selected cities, for the selected time period, 
     # every city has to be its own distribution with a different color.
-fig3 = plt.figure(figsize=(10, 5))
+fig3 = plt.figure(figsize=(15, 5))
 
 for city in selected_cities:
-    city_df = temps_df[temps_df["City"] == city]  # TODO: get a dataframe with the rows of the selected city
-    city_df_period = city_df_period = city_df[(city_df["Date"] >= start_date) & (city_df["Date"] <= end_date)]  # TODO: get a dataframe with the rows of the selected city and the selected period of time using the Date column and any of the <, >, <=, >= operators to compare with start_date and end_date
-    plt.hist(city_df_period["AvgTemperatureCelsius"], bins=20, alpha=0.5, label=f"{city}")   # TODO: plot each city histogram in the same plot and use the label parameter to set the legend name for each city 
+    city_df = temps_df[temps_df['City'] == city]
+    city_df_period = city_df[(city_df['Date'] > start_date) & (city_df['Date'] < end_date)]
+    plt.hist(city_df_period['AvgTemperatureCelsius'], bins=20, alpha=0.5, label=city)
 
-plt.title(f"Temperature Distribution in Selected Cities ({start_date} to {end_date})")   #TODO
-plt.xlabel("Temperature (°C)")   #TODO
-plt.ylabel("Frequency")   #TODO
-
+plt.title('Temperature Distribution for Selected Cities')
+plt.xlabel('Avg Celsius')
+plt.ylabel('Frequency')
 plt.legend()
 
 c.pyplot(fig3)
