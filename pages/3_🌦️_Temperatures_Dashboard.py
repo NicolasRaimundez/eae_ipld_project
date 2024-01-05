@@ -140,7 +140,7 @@ if unique_countries_list is not None and len(selected_cities) > 0:
     # TODO: Ex 3.7: Plot the temperatures over time for the selected cities for the selected time period,
     # every city has to be its own line with a different color.
 
-ffig2 = plt.figure(figsize=(10, 5))
+fig2 = plt.figure(figsize=(10, 5))
 
 for city in selected_cities:
     city_df = temps_df[temps_df["City"] == city] # TODO: get a dataframe with the rows of the selected city
