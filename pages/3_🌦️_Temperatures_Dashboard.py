@@ -155,7 +155,7 @@ for city in selected_cities:
     city_df_period = city_df_period = city_df[(city_df["Date"] >= start_date) & (city_df["Date"] <= end_date)] # TODO: get a dataframe with the rows of the selected city and the selected period of time using the Date column and any of the <, >, <=, >= operators to compare with start_date and end_date
     plt.plot(city_df_period["Date"], city_df_period["AvgTemperatureCelsius"], label=f"{city}") # TODO plot each city line and use the label parameter to set the legend name for each city
  
-plt.title(f"Temperature in Selected Cities ({start_date} to {end_date})")  #TODO
+plt.title(f"Temperature in Selected Cities")  #TODO
 plt.xlabel("Date")  #TODO
 plt.ylabel("Temperature (°C)")  #TODO
 
