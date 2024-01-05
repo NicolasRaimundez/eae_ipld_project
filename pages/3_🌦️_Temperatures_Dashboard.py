@@ -29,9 +29,9 @@ st.divider()
 
 @st.cache_data
 def load_data():
-    data_path = "cities_temperatures.csv"
+    data_path = "data/cities_temperatures.csv"
 
-    temps_df = pd.read_csv(data_path)  # TODO: Ex 3.1: Load the dataset using Pandas, use the data_path variable and set the index column to "show_id"
+    temps_df = None  # TODO: Ex 3.1: Load the dataset using Pandas, use the data_path variable and set the index column to "show_id"
 
     if temps_df is not None:
         temps_df["Date"] = pd.to_datetime(temps_df["Date"]).dt.date
@@ -49,37 +49,28 @@ with st.expander("Check the complete dataset:"):
 # ----- Data transformation -----
 
 # TODO: Ex 3.2: Create a new column called `AvgTemperatureCelsius` that contains the temperature in Celsius degrees.
-
-temps_df["AvgTemperatureCelsius"] = round((temps_df["AvgTemperatureFahrenheit"] - 32) * 5 / 9,1)
+# temps_df["AvgTemperatureCelsius"] = ...       # uncomment this line to complete it
 
 
 # ----- Extracting some basic information from the dataset -----
 
 # TODO: Ex 3.3: How many different cities are there? Provide a list of them.
-unique_cities_list = temps_df["City"].unique()
-num_unique_cities = len(unique_cities_list)
-
-unique_countries_list = temps_df["Country"].unique()
-num_unique_countries = len(unique_countries_list)
+unique_countries_list = None
 
 # TODO: Ex 3.4: Which are the minimum and maximum dates?
-
-min_date = temps_df["Date"].min()  # TODO
-max_date = temps_df["Date"].max()  # TODO
+min_date = None
+max_date = None
 
 # TODO:  Ex 3.5: What are the global minimum and maximum temperatures? Find the city and the date of each of them.
+min_temp = None
+max_temp = None
 
-min_temp_index = temps_df["AvgTemperatureCelsius"].idxmin()
-max_temp_index = temps_df["AvgTemperatureCelsius"].idxmax()
+min_temp_city = None
+min_temp_date = None
 
-min_temp = temps_df.loc[min_temp_index, "AvgTemperatureCelsius"] # TODO
-max_temp = temps_df.loc[max_temp_index, "AvgTemperatureCelsius"] # TODO
+max_temp_city = None
+max_temp_date = None
 
-min_temp_city = temps_df.loc[min_temp_index, "City"] # TODO
-min_temp_date = temps_df.loc[min_temp_index, "Date"] # TODO
-
-max_temp_city = temps_df.loc[max_temp_index, "City"] # TODO
-max_temp_date = temps_df.loc[max_temp_index, "Date"] # TODO
 
 # ----- Displaying the extracted information metrics -----
 
@@ -138,32 +129,45 @@ if unique_countries_list is not None and len(selected_cities) > 0:
     # TODO: Ex 3.7: Plot the temperatures over time for the selected cities for the selected time period,
     # every city has to be its own line with a different color.
 
-fig2 = plt.figure(figsize=(15, 5))
+    fig = plt.figure(figsize=(10, 5))
 
-for city in selected_cities:
-    city_df = temps_df[temps_df['City'] == city]
-    city_df_period = city_df[(city_df['Date'] > start_date) & (city_df['Date'] < end_date)]
-    plt.plot(city_df_period['Date'], city_df_period['AvgTemperatureCelsius'], label=city)
+    # for city in selected_cities:
+    #     city_df = None            # TODO
+    #     city_df_period = None     # TODO
+    #     plt.plot()                # TODO 
+    # plt.title()   # TODO
+    # plt.xlabel()  # TODO
+    # plt.ylabel()  # TODO
 
-plt.title('Temperature Trends for Selected Cities')
-plt.xlabel('Date')
-plt.ylabel('Avg Celsius')
-plt.legend()
+    plt.legend()
+    
+    c.pyplot(fig)
 
-c.pyplot(fig2)
+
 
     # TODO: Make a histogram of the temperature reads of a list of selected cities, for the selected time period, 
     # every city has to be its own distribution with a different color.
-fig3 = plt.figure(figsize=(15, 5))
 
-for city in selected_cities:
-    city_df = temps_df[temps_df['City'] == city]
-    city_df_period = city_df[(city_df['Date'] > start_date) & (city_df['Date'] < end_date)]
-    plt.hist(city_df_period['AvgTemperatureCelsius'], bins=20, alpha=0.5, label=city)
+    fig = plt.figure(figsize=(10, 5))
 
-plt.title('Temperature Distribution for Selected Cities')
-plt.xlabel('Avg Celsius')
-plt.ylabel('Frequency')
-plt.legend()
+    # for city in selected_cities:
+    #     city_df = None            # TODO
+    #     city_df_period = None     # TODO
+    #     plt.hist()                # TODO
 
-c.pyplot(fig3)
+    # plt.title()   # TODO
+    # plt.xlabel()  # TODO
+    # plt.ylabel()  # TODO
+
+    plt.legend()
+
+    c.pyplot(fig)
+
+
+
+
+
+
+
+
+
