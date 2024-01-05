@@ -51,19 +51,19 @@ st.subheader("About Me")
 
 # TODO: Modify and adapt the following lines to your info, you can add or remove some details if you want
 st.write("""
-# - 🧑‍💻 I am a currently a student at EAE Business School, studying in the Big Data & Analytics Master
+ - 🧑‍💻 I am a currently a student at EAE Business School, studying in the Big Data & Analytics Master
 
-# - 🛩️ prev: I have a Bachelors in Business Administration and over 4 years in Supply Chain & Logistics
+ - 🛩️ prev: I have a Bachelors in Business Administration and over 4 years in Supply Chain & Logistics
 
-# - ❤️ I have a passion in music and love playing/watching sports
+ - ❤️ I have a passion in music and love playing/watching sports
 
-# - 🤖 I am extremely curious about many topics, but two of my top curiosities are about fashion and music
+ - 🤖 I am extremely curious about many topics, but two of my top curiosities are about fashion and music
 
-# - 🏂 I do sports such as: Football, Tennis, Golf and also like producing music
+ - 🏂 I do sports such as: Football, Tennis, Golf and also like producing music
 
-# - 📫 How to reach me: nicolasraimundez@gmail.com
+ - 📫 How to reach me: nicolasraimundez@gmail.com
 
-# - 🏠 Barcelona, Catalunya
+ - 🏠 Barcelona, Catalunya
 """)
 
 # Feel free to add other points like your Linkedin, Github, Social Media, etc.
