@@ -8,7 +8,7 @@
 <img alt="Hi There" src="./eae_img.png" style="width:300px;" />
 
 
-### Author: *Your Name Here*
+### Author: *Nicolas Raimundez*
 
 ### Date: Dec 2023
 
